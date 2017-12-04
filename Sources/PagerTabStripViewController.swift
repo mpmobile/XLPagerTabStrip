@@ -53,8 +53,8 @@ public protocol IndicatorInfoProvider {
 
     @IBOutlet weak public var containerView: UIScrollView!
 
-    open weak var delegate: PagerTabStripDelegate?
-    open weak var datasource: PagerTabStripDataSource?
+    @objc open weak var delegate: PagerTabStripDelegate?
+    @objc open weak var datasource: PagerTabStripDataSource?
 
     open var pagerBehaviour = PagerTabStripBehaviour.progressive(skipIntermediateViewControllers: true, elasticIndicatorLimit: true)
 
