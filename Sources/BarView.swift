@@ -24,7 +24,7 @@
 
 import Foundation
 
-open class BarView: UIView {
+@objc open class BarView: UIView {
 
     open lazy var selectedBar: UIView = { [unowned self] in
         let selectedBar = UIView(frame: CGRect(x: 0, y: 0, width: self.frame.size.width, height: self.frame.size.height))
@@ -65,12 +65,12 @@ open class BarView: UIView {
         }
     }
 
-    open func moveTo(index: Int, animated: Bool) {
+    @objc open func moveTo(index: Int, animated: Bool) {
         selectedIndex = index
         updateSelectedBarPosition(with: animated)
     }
 
-    open func move(fromIndex: Int, toIndex: Int, progressPercentage: CGFloat) {
+    @objc open func move(fromIndex: Int, toIndex: Int, progressPercentage: CGFloat) {
         selectedIndex = (progressPercentage > 0.5) ? toIndex : fromIndex
 
         var newFrame = selectedBar.frame

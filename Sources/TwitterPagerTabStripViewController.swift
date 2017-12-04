@@ -37,7 +37,7 @@ public struct TwitterPagerTabStripSettings {
     public var style = Style()
 }
 
-open class TwitterPagerTabStripViewController: PagerTabStripViewController, PagerTabStripDataSource, PagerTabStripIsProgressiveDelegate {
+@objc open class TwitterPagerTabStripViewController: PagerTabStripViewController, PagerTabStripDataSource, PagerTabStripIsProgressiveDelegate {
 
     open var settings = TwitterPagerTabStripSettings()
 
@@ -84,7 +84,7 @@ open class TwitterPagerTabStripViewController: PagerTabStripViewController, Page
 
     // MARK: - PagerTabStripDelegate
 
-    open func updateIndicator(for viewController: PagerTabStripViewController, fromIndex: Int, toIndex: Int, withProgressPercentage progressPercentage: CGFloat, indexWasChanged: Bool) {
+    @objc open func updateIndicator(for viewController: PagerTabStripViewController, fromIndex: Int, toIndex: Int, withProgressPercentage progressPercentage: CGFloat, indexWasChanged: Bool) {
 
         // move indicator scroll view
         guard let distance = distanceValue else { return }
@@ -106,7 +106,7 @@ open class TwitterPagerTabStripViewController: PagerTabStripViewController, Page
         pageControl.currentPage = currentIndex
     }
 
-    open func updateIndicator(for viewController: PagerTabStripViewController, fromIndex: Int, toIndex: Int) {
+    @objc open func updateIndicator(for viewController: PagerTabStripViewController, fromIndex: Int, toIndex: Int) {
         fatalError()
     }
 

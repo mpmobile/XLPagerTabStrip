@@ -33,7 +33,7 @@ public struct SegmentedPagerTabStripSettings {
     public var style = Style()
 }
 
-open class SegmentedPagerTabStripViewController: PagerTabStripViewController, PagerTabStripDataSource, PagerTabStripDelegate {
+@objc open class SegmentedPagerTabStripViewController: PagerTabStripViewController, PagerTabStripDataSource, PagerTabStripDelegate {
 
     @IBOutlet weak public var segmentedControl: UISegmentedControl!
 
@@ -73,7 +73,7 @@ open class SegmentedPagerTabStripViewController: PagerTabStripViewController, Pa
         }
     }
 
-    func reloadSegmentedControl() {
+    @objc func reloadSegmentedControl() {
         segmentedControl.removeAllSegments()
         for (index, item) in viewControllers.enumerated() {
             let child = item as! IndicatorInfoProvider // swiftlint:disable:this force_cast
@@ -95,7 +95,7 @@ open class SegmentedPagerTabStripViewController: PagerTabStripViewController, Pa
 
     // MARK: - PagerTabStripDelegate
 
-    open func updateIndicator(for viewController: PagerTabStripViewController, fromIndex: Int, toIndex: Int) {
+    @objc open func updateIndicator(for viewController: PagerTabStripViewController, fromIndex: Int, toIndex: Int) {
         if shouldUpdateSegmentedControl {
             segmentedControl.selectedSegmentIndex = toIndex
         }

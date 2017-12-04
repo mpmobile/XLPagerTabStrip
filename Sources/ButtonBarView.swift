@@ -43,7 +43,7 @@ public enum SelectedBarVerticalAlignment {
     case bottom
 }
 
-open class ButtonBarView: UICollectionView {
+@objc open class ButtonBarView: UICollectionView {
 
     open lazy var selectedBar: UIView = { [unowned self] in
         let bar  = UIView(frame: CGRect(x: 0, y: self.frame.size.height - CGFloat(self.selectedBarHeight), width: 0, height: CGFloat(self.selectedBarHeight)))
