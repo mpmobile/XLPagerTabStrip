@@ -177,7 +177,7 @@ public protocol IndicatorInfoProvider {
 
     // MARK: - PagerTabStripDataSource
 
-    @objc public func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
+    @objc open func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
         assertionFailure("Sub-class must implement the PagerTabStripDataSource viewControllers(for:) method")
         return []
     }
